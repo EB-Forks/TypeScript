@@ -4,9 +4,9 @@ class C {
 
     get [Symbol.hasInstance]() {
 >[Symbol.hasInstance] : number
->Symbol.hasInstance : symbol
+>Symbol.hasInstance : unique symbol
 >Symbol : SymbolConstructor
->hasInstance : symbol
+>hasInstance : unique symbol
 
         return "";
 >"" : ""
@@ -14,32 +14,32 @@ class C {
     // Should take a string
     set [Symbol.hasInstance](x: number) {
 >[Symbol.hasInstance] : number
->Symbol.hasInstance : symbol
+>Symbol.hasInstance : unique symbol
 >Symbol : SymbolConstructor
->hasInstance : symbol
+>hasInstance : unique symbol
 >x : number
     }
 }
 
 (new C)[Symbol.hasInstance] = 0;
 >(new C)[Symbol.hasInstance] = 0 : 0
->(new C)[Symbol.hasInstance] : number
+>(new C)[Symbol.hasInstance] : string
 >(new C) : C
 >new C : C
 >C : typeof C
->Symbol.hasInstance : symbol
+>Symbol.hasInstance : unique symbol
 >Symbol : SymbolConstructor
->hasInstance : symbol
+>hasInstance : unique symbol
 >0 : 0
 
 (new C)[Symbol.hasInstance] = "";
 >(new C)[Symbol.hasInstance] = "" : ""
->(new C)[Symbol.hasInstance] : number
+>(new C)[Symbol.hasInstance] : string
 >(new C) : C
 >new C : C
 >C : typeof C
->Symbol.hasInstance : symbol
+>Symbol.hasInstance : unique symbol
 >Symbol : SymbolConstructor
->hasInstance : symbol
+>hasInstance : unique symbol
 >"" : ""
 
